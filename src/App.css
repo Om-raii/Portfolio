@@ -1,0 +1,28 @@
+.app {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  background: var(--accent-glow);
+  border: 1px solid var(--accent-primary);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .custom-cursor {
+    display: none;
+  }
+}

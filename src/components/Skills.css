@@ -1,0 +1,120 @@
+.skills-v2-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.skills-main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.skill-group-v2 {
+  padding: 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-group-v2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--gradient-primary);
+}
+
+.skill-group-v2 h3 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.progress-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.skill-v2-item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.skill-label {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.bar-v2 {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.fill-v2 {
+  height: 100%;
+  background: var(--gradient-primary);
+  box-shadow: 0 0 15px var(--accent-primary);
+  border-radius: 10px;
+}
+
+.tools-languages {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 60px;
+  padding: 50px;
+}
+
+.misc-box h4 {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  color: var(--accent-secondary);
+}
+
+.glow-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.glow-tag {
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: var(--transition-smooth);
+}
+
+.glow-tag:hover {
+  background: var(--accent-glow);
+  color: var(--text-primary);
+  border-color: var(--accent-primary);
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(56, 189, 248, 0.2);
+}
+
+@media (max-width: 992px) {
+  .skills-main-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .tools-languages {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .skill-group-v2 { padding: 30px; }
+}

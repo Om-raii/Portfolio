@@ -1,0 +1,114 @@
+.timeline-v2 {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.timeline-v2-item {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.timeline-v2-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.marker-icon {
+  width: 50px;
+  height: 50px;
+  background: var(--bg-alt);
+  border: 2px solid var(--accent-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-primary);
+  font-size: 1.2rem;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+  z-index: 2;
+}
+
+.marker-line {
+  width: 2px;
+  flex-grow: 1;
+  background: linear-gradient(to bottom, var(--accent-primary), transparent);
+  margin-top: 10px;
+}
+
+.timeline-v2-content {
+  padding: 40px;
+  transition: var(--transition-smooth);
+}
+
+.timeline-v2-content:hover {
+  transform: translateX(10px);
+  border-color: var(--accent-primary);
+}
+
+.timeline-v2-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 25px;
+  border-bottom: 1px solid var(--glass-border);
+  padding-bottom: 20px;
+}
+
+.exp-role-v2 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: 5px;
+}
+
+.exp-company-v2 {
+  color: var(--accent-secondary);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.exp-date-v2 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  background: rgba(56, 189, 248, 0.1);
+  padding: 5px 15px;
+  border-radius: 50px;
+}
+
+.exp-bullets-v2 {
+  list-style: none;
+  padding: 0;
+}
+
+.exp-bullets-v2 li {
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 25px;
+}
+
+.exp-bullets-v2 li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent-primary);
+  font-weight: 800;
+}
+
+@media (max-width: 768px) {
+  .timeline-v2-item {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .timeline-v2-marker { display: none; }
+  
+  .timeline-v2-header {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
