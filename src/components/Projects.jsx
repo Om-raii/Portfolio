@@ -4,6 +4,12 @@ import { projects } from "../data";
 import "./Projects.css";
 
 const Projects = () => {
+  const handleCardClick = (githubUrl) => {
+    if (githubUrl !== "#") {
+      window.open(githubUrl, "_blank");
+    }
+  };
+
   return (
     <section id="projects" className="projects">
       <div className="section-bg-text">PORTFOLIO</div>
@@ -20,6 +26,8 @@ const Projects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
             viewport={{ once: true }}
+            onClick={() => handleCardClick(project.github)}
+            style={{ cursor: project.github !== "#" ? "pointer" : "default" }}
           >
             <div className="project-image-box">
               <div className="tech-stack-overlay">
@@ -40,11 +48,11 @@ const Projects = () => {
               <h3 className="project-name">{project.title}</h3>
               <p className="project-summary">{project.description}</p>
               
-              <div className="project-actions">
-                <a href={project.github} className="action-btn github">
+              <div className="project-actions" onClick={(e) => e.stopPropagation()}>
+                <a href={project.github} target="_blank" rel="noopener noreferrer" className="action-btn github">
                   <FaGithub /> Source
                 </a>
-                <a href={project.live} className="action-btn live btn-primary">
+                <a href={project.live} target="_blank" rel="noopener noreferrer" className="action-btn live btn-primary">
                   <FaExternalLinkAlt /> Live Demo
                 </a>
               </div>
