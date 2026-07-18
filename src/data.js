@@ -1,3 +1,11 @@
+import raiClinicAi from "./assets/projects/rai-clinic-ai.svg";
+import artizoImg from "./assets/projects/artizo.svg";
+import carpoolImg from "./assets/projects/carpool.svg";
+import fittrackImg from "./assets/projects/fittrack.svg";
+import javaManagementImg from "./assets/projects/java-management.svg";
+import pythonQuizImg from "./assets/projects/python-quiz.svg";
+import edusiteImg from "./assets/projects/edusite.svg";
+
 export const personalInfo = {
   name: "Om Parkash",
   role: "Full Stack Developer | MERN Stack Developer | Computer Science Student",
@@ -47,6 +55,7 @@ export const projects = [
       "Healthcare workflow optimization",
     ],
     featured: true,
+    image: raiClinicAi,
     github: "https://github.com/Om-raii/Rai-Clinic",
     live: "https://rai-clinic.vercel.app/",
   },
@@ -64,6 +73,7 @@ export const projects = [
       "Real-time notifications",
     ],
     featured: false,
+    image: artizoImg,
     github: "https://github.com/Om-raii/Artizo",
     live: "#",
   },
@@ -73,6 +83,7 @@ export const projects = [
     description: "Developed a modern and user-friendly car pooling application using Flutter for the frontend, Node.js for the backend server, and MongoDB as the database. The application allows users to easily offer rides, search for available trips, and connect with other travelers in real time.",
     tech: ["Flutter", "Node.js", "MongoDB", "Mobile App"],
     features: ["Ride offering", "Trip search", "Real-time connection", "User authentication", "Booking management", "Ride matching"],
+    image: carpoolImg,
     github: "https://github.com/Om-raii/Carpool",
     live: "#",
   },
@@ -91,6 +102,7 @@ export const projects = [
       "Fitness progress monitoring",
       "Provider state management",
     ],
+    image: fittrackImg,
     github: "https://github.com/Om-raii/GYM",
     live: "#",
   },
@@ -99,6 +111,7 @@ export const projects = [
     title: "Java Management System",
     description: "Java-based CRUD management system using OOP concepts and MySQL integration.",
     tech: ["Java", "MySQL"],
+    image: javaManagementImg,
     github: "#",
     live: "#",
   },
@@ -107,6 +120,7 @@ export const projects = [
     title: "Python Quiz Game",
     description: "Interactive quiz game with score tracking and validation using Python.",
     tech: ["Python"],
+    image: pythonQuizImg,
     github: "#",
     live: "#",
   },
@@ -123,6 +137,7 @@ export const projects = [
       "Reusable components",
       "Database integration",
     ],
+    image: edusiteImg,
     github: "https://github.com/Om-raii/edusite",
     live: "#",
   },

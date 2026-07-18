@@ -1,30 +1,55 @@
 import { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 import { FaPaperPlane, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { personalInfo } from "../data";
 import "./Contact.css";
 
 const Contact = () => {
-  const form = useRef();
+  const form = useRef(null);
   const [isSending, setIsSending] = useState(false);
   const [message, setMessage] = useState("");
+  const [messageType, setMessageType] = useState("success");
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
-    setIsSending(true);
+    if (!form.current) return;
 
-    // Replace these with your actual EmailJS Service ID, Template ID, and Public Key
-    // emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
-    
-    // Simulate API call
-    setTimeout(() => {
-      setIsSending(false);
-      setMessage("Message sent successfully! I will get back to you soon.");
-      console.log("Form submitted to Om Parkash:", form.current.user_name.value);
+    setIsSending(true);
+    setMessage("");
+    setMessageType("success");
+
+    try {
+      const formData = new FormData(form.current);
+      const payload = new URLSearchParams();
+      payload.append("name", formData.get("user_name")?.toString() ?? "");
+      payload.append("email", formData.get("user_email")?.toString() ?? "");
+      payload.append("message", formData.get("message")?.toString() ?? "");
+      payload.append("_subject", `New portfolio message from ${formData.get("user_name")}`);
+      payload.append("_captcha", "false");
+      payload.append("_template", "table");
+
+      const response = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(personalInfo.email)}`, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+        },
+        body: payload,
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
+
       form.current.reset();
-      setTimeout(() => setMessage(""), 5000);
-    }, 1500);
+      setMessage("Message sent successfully! I will get back to you soon.");
+    } catch (error) {
+      console.error("Contact form error:", error);
+      setMessageType("error");
+      setMessage(`Sorry, something went wrong. Please email me directly at ${personalInfo.email}.`);
+    } finally {
+      setIsSending(false);
+      window.setTimeout(() => setMessage(""), 5000);
+    }
   };
 
   return (
@@ -87,7 +112,7 @@ const Contact = () => {
             <button type="submit" className="btn btn-primary" disabled={isSending}>
               {isSending ? "Sending..." : "Send Message"} <FaPaperPlane />
             </button>
-            {message && <p className="success-msg">{message}</p>}
+            {message && <p className={messageType === "error" ? "error-msg" : "success-msg"}>{message}</p>}
           </form>
         </motion.div>
       </div>

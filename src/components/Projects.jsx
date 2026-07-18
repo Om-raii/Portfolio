@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaGithub, FaExternalLinkAlt, FaCode } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { projects } from "../data";
 import "./Projects.css";
 
@@ -33,14 +33,7 @@ const Projects = () => {
               <div className="tech-stack-overlay">
                 {project.tech.map(t => <span key={t}>{t}</span>)}
               </div>
-              {/* Using a placeholder gradient for image since actual images aren't provided */}
-              <div className="project-placeholder-img" style={{
-                background: project.featured 
-                  ? 'linear-gradient(45deg, #0f172a, #38bdf8)' 
-                  : 'linear-gradient(45deg, #0f172a, #1e293b)'
-              }}>
-                <FaCode className="placeholder-icon" />
-              </div>
+              <img src={project.image} alt={project.title} className="project-illustration" />
             </div>
 
             <div className="project-info-v2 glass">
