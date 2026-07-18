@@ -58,14 +58,20 @@ const Projects = () => {
         <div className="github-content">
           <h3>GitHub Activity</h3>
           <div className="stats-grid">
-            <img 
-              src="https://github-readme-stats.vercel.app/api?username=om-rai-b15163282&show_icons=true&theme=transparent&hide_border=true&title_color=38bdf8&text_color=94a3b8&icon_color=38bdf8" 
-              alt="GitHub Stats" 
-            />
-            <img 
-              src="https://github-readme-streak-stats.herokuapp.com/?user=om-rai-b15163282&theme=transparent&hide_border=true&stroke=38bdf8&ring=c084fc&fire=c084fc&currStreakLabel=38bdf8" 
-              alt="GitHub Streak" 
-            />
+            <a
+              href="https://github.com/Om-raii"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="github-profile-card"
+            >
+              <div className="github-profile-icon">
+                <FaGithub />
+              </div>
+              <div>
+                <h4>Om-raii</h4>
+                <p>Open-source projects, repositories, and coding activity</p>
+              </div>
+            </a>
           </div>
         </div>
       </div>

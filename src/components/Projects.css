@@ -158,6 +158,48 @@
   transition: var(--transition-smooth);
 }
 
+.github-profile-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 22px 28px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: var(--transition-smooth);
+  min-width: min(100%, 420px);
+}
+
+.github-profile-card:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.github-profile-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  color: white;
+  font-size: 1.5rem;
+}
+
+.github-profile-card h4 {
+  margin: 0 0 6px;
+  font-size: 1.1rem;
+}
+
+.github-profile-card p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
 .stats-grid img:hover {
   transform: scale(1.05);
 }
