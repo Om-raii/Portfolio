@@ -21,10 +21,13 @@ const Contact = () => {
     try {
       const formData = new FormData(form.current);
       const payload = new URLSearchParams();
-      payload.append("name", formData.get("user_name")?.toString() ?? "");
-      payload.append("email", formData.get("user_email")?.toString() ?? "");
+      const name = formData.get("name")?.toString() ?? "";
+      const email = formData.get("email")?.toString() ?? "";
+      payload.append("name", name);
+      payload.append("email", email);
       payload.append("message", formData.get("message")?.toString() ?? "");
-      payload.append("_subject", `New portfolio message from ${formData.get("user_name")}`);
+      payload.append("_replyto", email);
+      payload.append("_subject", `New portfolio message from ${name || "a visitor"}`);
       payload.append("_captcha", "false");
       payload.append("_template", "table");
 
@@ -100,11 +103,13 @@ const Contact = () => {
           viewport={{ once: true }}
         >
           <form ref={form} onSubmit={sendEmail} className="contact-form">
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
             <div className="form-group">
-              <input type="text" name="user_name" placeholder="Your Name" required />
+              <input type="text" name="name" placeholder="Your Name" required />
             </div>
             <div className="form-group">
-              <input type="email" name="user_email" placeholder="Your Email" required />
+              <input type="email" name="email" placeholder="Your Email" required />
             </div>
             <div className="form-group">
               <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
