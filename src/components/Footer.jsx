@@ -11,8 +11,8 @@ const Footer = () => {
         </div>
         <p className="footer-desc">Building modern digital experiences with passion and precision.</p>
         <div className="footer-socials">
+          <a href={personalInfo.github} target="_blank" rel="noreferrer"><FaGithub /></a>
           <a href={personalInfo.linkedin} target="_blank" rel="noreferrer"><FaLinkedin /></a>
-          <a href="#"><FaGithub /></a>
           <a href={`mailto:${personalInfo.email}`}><FaEnvelope /></a>
         </div>
         <div className="footer-bottom">

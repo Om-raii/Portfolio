@@ -15,6 +15,7 @@ export const personalInfo = {
   email: "omeshmalhi@gmail.com",
   phone: "+92-3470084856",
   linkedin: "https://linkedin.com/in/om-rai-b15163282",
+  github: "https://github.com/Om-raii",
   heroIntro: "Building scalable full-stack web applications and modern digital experiences using MERN Stack, Java, and AI-powered solutions.",
 };
 

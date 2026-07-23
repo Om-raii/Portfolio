@@ -60,13 +60,15 @@ const Hero = () => {
           <div className="hero-socials">
             {[
               { icon: <FaLinkedin />, link: personalInfo.linkedin },
-              { icon: <FaGithub />, link: "#" },
+              { icon: <FaGithub />, link: personalInfo.github },
               { icon: <FaEnvelope />, link: `mailto:${personalInfo.email}` }
             ].map((social, i) => (
               <motion.a 
                 key={i}
                 href={social.link}
                 className="social-btn"
+                target={social.link.startsWith("mailto:") ? undefined : "_blank"}
+                rel={social.link.startsWith("mailto:") ? undefined : "noreferrer"}
                 whileHover={{ y: -5, scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
