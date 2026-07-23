@@ -22,7 +22,14 @@ const Certifications = () => {
             <div className="cert-icon">
               <FaCertificate />
             </div>
-            <h3 className="cert-name">{cert}</h3>
+            <div className="cert-content">
+              <h3 className="cert-name">{cert.title}</h3>
+              {cert.link && (
+                <a href={cert.link} className="cert-link" target="_blank" rel="noreferrer">
+                  View Certificate
+                </a>
+              )}
+            </div>
           </motion.div>
         ))}
       </div>

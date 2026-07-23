@@ -161,12 +161,30 @@ export const experience = [
 ];
 
 export const certifications = [
-  "Java & Spring",
-  "Python - Kaggle",
-  "Backend Development",
-  "MongoDB Basics",
-  "MERN Stack",
-  "NodeJS with Express & MongoDB",
-  "Microsoft AI Classroom",
-  "SQL",
+  { title: "Java & Spring" },
+  {
+    title: "Python - Kaggle",
+    link: "https://www.linkedin.com/posts/om-rai-b15163282_python-artificialintelligance-share-7325209562876153856-C6xt/",
+  },
+  {
+    title: "Backend Development & API Integration",
+    link: "https://www.linkedin.com/posts/om-rai-b15163282_backenddevelopment-api-certificate-share-7366904928725823489-FHTJ/",
+  },
+  {
+    title: "Application Development (Java & OOP)",
+    link: "https://www.linkedin.com/posts/om-rai-b15163282_applicationdevelopment-java-oop-ugcPost-7363180426405855234-jn2a/",
+  },
+  {
+    title: "Cybersecurity / Homeland Security",
+    link: "https://www.linkedin.com/posts/om-rai-b15163282_im-happy-to-share-that-ive-obtained-a-new-share-7348414656538890240-5Hch/",
+  },
+  {
+    title: "Backend Development (NodeJS & Express)",
+    link: "https://www.linkedin.com/posts/om-rai-b15163282_backenddevelopment-nodejs-express-share-7365386544452399104-WZFt/",
+  },
+  { title: "MongoDB Basics" },
+  { title: "MERN Stack" },
+  { title: "NodeJS with Express & MongoDB" },
+  { title: "Microsoft AI Classroom" },
+  { title: "SQL" },
 ];

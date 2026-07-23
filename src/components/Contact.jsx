@@ -20,27 +20,22 @@ const Contact = () => {
 
     try {
       const formData = new FormData(form.current);
-      const payload = new URLSearchParams();
       const name = formData.get("name")?.toString() ?? "";
       const email = formData.get("email")?.toString() ?? "";
-      payload.append("name", name);
-      payload.append("email", email);
-      payload.append("message", formData.get("message")?.toString() ?? "");
-      payload.append("_replyto", email);
-      payload.append("_subject", `New portfolio message from ${name || "a visitor"}`);
-      payload.append("_captcha", "false");
-      payload.append("_template", "table");
+      formData.set("_replyto", email);
+      formData.set("_subject", `New portfolio message from ${name || "a visitor"}`);
 
       const response = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(personalInfo.email)}`, {
         method: "POST",
         headers: {
           Accept: "application/json",
         },
-        body: payload,
+        body: formData,
       });
 
       if (!response.ok) {
-        throw new Error("Failed to send message");
+        const errorData = await response.text();
+        throw new Error(`Failed to send message (${response.status}): ${errorData}`);
       }
 
       form.current.reset();

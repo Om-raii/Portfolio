@@ -24,4 +24,21 @@
   font-size: 1rem;
   font-weight: 600;
   color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.cert-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.cert-link {
+  color: var(--accent-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.cert-link:hover {
+  text-decoration: underline;
 }
