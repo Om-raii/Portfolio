@@ -161,7 +161,10 @@ export const experience = [
 ];
 
 export const certifications = [
-  { title: "Java & Spring" },
+  {
+    title: "Java & Spring",
+    link: "https://www.linkedin.com/posts/om-rai-b15163282_javaprogramming-internships-codsoftinternship-activity-7169314244490846209-0Th1?utm_source=share&utm_medium=member_desktop&rcm=ACoAAES47IEBMHlBwjVXRD0TSXS6ew-VPNi37sE",
+  },
   {
     title: "Python - Kaggle",
     link: "https://www.linkedin.com/posts/om-rai-b15163282_python-artificialintelligance-share-7325209562876153856-C6xt/",
@@ -183,8 +186,16 @@ export const certifications = [
     link: "https://www.linkedin.com/posts/om-rai-b15163282_backenddevelopment-nodejs-express-share-7365386544452399104-WZFt/",
   },
   { title: "MongoDB Basics" },
-  { title: "MERN Stack" },
-  { title: "NodeJS with Express & MongoDB" },
+  {
+    title: "MERN Stack",
+  },
+  {
+    title: "NodeJS with Express & MongoDB",
+    link: "https://www.linkedin.com/posts/om-rai-b15163282_backenddevelopment-nodejs-express-activity-7365386545542889473-SLxw?utm_source=share&utm_medium=member_desktop&rcm=ACoAAES47IEBMHlBwjVXRD0TSXS6ew-VPNi37sE",
+  },
   { title: "Microsoft AI Classroom" },
-  { title: "SQL" },
+  {
+    title: "SQL",
+    link: "https://www.linkedin.com/posts/om-rai-b15163282_om-rai-has-successfully-completed-the-java-activity-7082430272029253633-WHcY?utm_source=share&utm_medium=member_desktop&rcm=ACoAAES47IEBMHlBwjVXRD0TSXS6ew-VPNi37sE",
+  },
 ];
